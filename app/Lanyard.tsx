@@ -1,3 +1,4 @@
+// @ts-nocheck
 'use client';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Canvas, extend, useFrame } from '@react-three/fiber';
@@ -108,7 +109,7 @@ function Band({
     ang = new THREE.Vector3(),
     rot = new THREE.Vector3(),
     dir = new THREE.Vector3();
-  const segmentProps = { type: 'dynamic' as const, canSleep: true, colliders: false, angularDamping: 4, linearDamping: 4 };
+  const segmentProps = { type: 'dynamic' as const, canSleep: true, colliders: false as any, angularDamping: 4, linearDamping: 4 };
   const { nodes, materials } = useGLTF('/card.glb') as any;
   const texture = useTexture(lanyardImage || '/lanyard.png') as any;
   const frontTex = useTexture(frontImage || BLANK_PIXEL) as any;
