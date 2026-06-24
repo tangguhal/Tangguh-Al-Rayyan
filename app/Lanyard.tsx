@@ -110,7 +110,7 @@ function Band({
     dir = new THREE.Vector3();
   const segmentProps = { type: 'dynamic' as const, canSleep: true, colliders: false, angularDamping: 4, linearDamping: 4 };
   const { nodes, materials } = useGLTF('/card.glb') as any;
-  const texture = useTexture(lanyardImage || '/lanyard.png');
+  const texture = useTexture(lanyardImage || '/lanyard.png') as any;
   const frontTex = useTexture(frontImage || BLANK_PIXEL) as any;
   const backTex = useTexture(backImage || BLANK_PIXEL) as any;
 
