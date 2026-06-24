@@ -111,8 +111,8 @@ function Band({
   const segmentProps = { type: 'dynamic' as const, canSleep: true, colliders: false, angularDamping: 4, linearDamping: 4 };
   const { nodes, materials } = useGLTF('/card.glb') as any;
   const texture = useTexture(lanyardImage || '/lanyard.png');
-  const frontTex = useTexture(frontImage || BLANK_PIXEL);
-  const backTex = useTexture(backImage || BLANK_PIXEL);
+  const frontTex = useTexture(frontImage || BLANK_PIXEL) as any;
+  const backTex = useTexture(backImage || BLANK_PIXEL) as any;
 
   const cardMap = useMemo(() => {
     const baseMap = materials.base.map;
